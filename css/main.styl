@@ -1,0 +1,250 @@
+
+@require normalize
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+body {
+  font-family: Verdana, Arial, sans-serif;
+  color: #000
+}
+
+a {
+  color: #00B7FF;
+}
+
+img {
+  max-width: 100%
+}
+
+.all_wrp {
+  overflow: hidden
+  padding: 36px 28px
+  max-width: 1006px
+  margin: 0 auto
+}
+
+$startSize = 16px
+.rating {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+  text-align: left;
+  height: $startSize;
+  &.removed {
+    & > span {
+      &:before {
+        background: linear-gradient(to bottom, #d5d5d5 0%, #717171 100%) !important;
+      }
+    }
+  }
+  & > span {
+    display: inline-block;
+    width: $startSize;
+    height: $startSize;
+    cursor: pointer
+    &:before {
+      content: ''
+      display: block
+      width: $startSize;
+      height: $startSize;
+      background: linear-gradient(to bottom, #d5d5d5 0%, #717171 100%);
+      clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    }
+    &:hover, &.active {
+      &:before {
+        background: linear-gradient(to bottom, #fff600 0%, #ff6c00 100%)
+      }
+      & ~ span {
+        &:before {
+          background: linear-gradient(to bottom, #fff600 0%, #ff6c00 100%)
+        }
+      }
+    }
+  }
+
+  // blue theme
+  &.blue {
+    & > span {
+      &:before {
+        background: linear-gradient(to bottom, #d5d5d5 0%, #717171 100%);
+      }
+      &:hover, &.active {
+        &:before {
+          background: linear-gradient(to bottom, #bdc6d5 0%, #1b14fe 100%);
+        }
+        & ~ span {
+          &:before {
+            background: linear-gradient(to bottom, #bdc6d5 0%, #1b14fe 100%);
+          }
+        }
+      }
+    }
+  }
+}
+
+svg {
+  polygon {
+    fill: inherit;
+  }
+}
+
+.rating-svg {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+  text-align: left;
+  height: $startSize;
+  &.removed {
+    & > .svg-star {
+      fill: url('#starGrayGradient') !important
+    }
+  }
+  & > .svg-star {
+    display: inline-block;
+    width: $startSize;
+    height: $startSize;
+    cursor: pointer
+    fill: url('#starGrayGradient')
+    &:hover, &.active {
+      fill: url('#starYellowGradient')
+      & ~ .svg-star {
+        fill: url('#starYellowGradient')
+      }
+    }
+  }
+
+  // blue theme
+  &.blue {
+    & > .svg-star {
+      &:hover, &.active {
+        fill: url('#starBlueGradient')
+        & ~ .svg-star {
+          fill: url('#starBlueGradient')
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.progress {
+  margin-top: 40px
+
+
+  width: 210px
+  height: 13px
+  position: relative
+  box-shadow: inset 0 1px 3px 0 rgba(0, 0, 0, 0.29);
+  border-radius 6px
+  .label {
+    font-size: 9px
+    position: absolute
+    left: 50%
+  }
+  .bar {
+    border-radius 6px
+    position: absolute
+    top: 0
+    left: 0
+    height: 100%
+    background: linear-gradient(to bottom, #abff58 0%,#28bf14 51%,#8bda1a 86%,#28bf14 100%);
+    transition width .3s ease
+  }
+}
+
+.btn {
+  margin-top: 30px
+
+
+  border-radius: 6px;
+  background: linear-gradient(to bottom, #f2f2f2 30%,#e2e2e2 70%);
+  border 1px solid rgba(0,0,0,.25)
+  height: 20px
+  padding: 1px 20px
+  font-size: 11px
+  &:focus {
+    outline none
+    background: linear-gradient(to bottom, #e2e2e2 30%, #f2f2f2 70%);
+  }
+  &:hover {
+    box-shadow inset 0 2px rgba(0,0,0,.1)
+  }
+}
+
+.browsers-list {
+  margin-top: 60px
+
+
+  display: flex
+  flex-direction row
+  img {
+    margin-left: 10px
+    &:first-child {
+      margin-left: 0
+    }
+  }
+  .ie {
+    margin-left: auto
+  }
+}
+
+.some-article {
+  margin-top: 90px
+
+  font-family: 'PT Sans', Arial, sans-serif
+  h1 {
+    width: 40%
+    font-size: 24px
+    color: #333333
+    line-height: .9
+    margin-bottom: 22px
+  }
+  abbr {
+    color: #353434
+  }
+  a {
+    color: #0070ed
+    text-decoration: underline
+  }
+  ul {
+    padding: 0
+    margin: 0
+    list-style none
+    li {
+      &:before {
+        content: '—'
+        color: #858585
+        position: relative
+        left: -4px;
+        margin-left: -13px;
+      }
+    }
+  }
+  .columns-text {
+    display: flex
+    flex-direction row
+    line-height: 21px
+    p {
+      margin-bottom: 19px
+      text-indent 16px
+    }
+    .left, .right {
+      width: 39%
+    }
+    .right {
+      margin-left: 90px
+    }
+  }
+}
+
