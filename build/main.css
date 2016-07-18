@@ -306,36 +306,13 @@ svg polygon {
   fill: inherit;
 }
 .rating-svg {
-  unicode-bidi: bidi-override;
-  direction: rtl;
-  text-align: left;
   height: 16px;
-}
-.rating-svg.removed > .svg-star {
-  fill: url("#starGrayGradient") !important;
 }
 .rating-svg > .svg-star {
   display: inline-block;
   width: 16px;
   height: 16px;
   cursor: pointer;
-  fill: url("#starGrayGradient");
-}
-.rating-svg > .svg-star:hover,
-.rating-svg > .svg-star.active {
-  fill: url("#starYellowGradient");
-}
-.rating-svg > .svg-star:hover ~ .svg-star,
-.rating-svg > .svg-star.active ~ .svg-star {
-  fill: url("#starYellowGradient");
-}
-.rating-svg.blue > .svg-star:hover,
-.rating-svg.blue > .svg-star.active {
-  fill: url("#starBlueGradient");
-}
-.rating-svg.blue > .svg-star:hover ~ .svg-star,
-.rating-svg.blue > .svg-star.active ~ .svg-star {
-  fill: url("#starBlueGradient");
 }
 .progress {
   margin-top: 40px;
