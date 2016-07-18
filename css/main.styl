@@ -90,39 +90,12 @@ svg {
 }
 
 .rating-svg {
-  unicode-bidi: bidi-override;
-  direction: rtl;
-  text-align: left;
   height: $startSize;
-  &.removed {
-    & > .svg-star {
-      fill: url('#starGrayGradient') !important
-    }
-  }
   & > .svg-star {
     display: inline-block;
     width: $startSize;
     height: $startSize;
     cursor: pointer
-    fill: url('#starGrayGradient')
-    &:hover, &.active {
-      fill: url('#starYellowGradient')
-      & ~ .svg-star {
-        fill: url('#starYellowGradient')
-      }
-    }
-  }
-
-  // blue theme
-  &.blue {
-    & > .svg-star {
-      &:hover, &.active {
-        fill: url('#starBlueGradient')
-        & ~ .svg-star {
-          fill: url('#starBlueGradient')
-        }
-      }
-    }
   }
 }
 
