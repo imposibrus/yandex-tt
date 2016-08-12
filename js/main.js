@@ -1,5 +1,5 @@
 
-import {Rating, RatingSVG} from './Rating';
+import Rating from './Rating';
 
 const clipPathRatings = document.querySelectorAll('.rating');
 
@@ -8,7 +8,4 @@ for(let i = 0; i < clipPathRatings.length; i++) {
   new Rating(ratingNode);
 }
 
-
-
-new RatingSVG(document.querySelector('.rating-svg'), {childSelector: '.svg-star'});
-new RatingSVG(document.querySelector('.rating-svg.blue'), {childSelector: '.svg-star', activeBgGradient: '#starBlueGradient'});
+new Rating(document.querySelector('.rating-svg.simple-js'), {childSelector: '.svg-star'});

@@ -83,6 +83,64 @@ $startSize = 16px
   }
 }
 
+.rating-radio {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+  text-align: left;
+  height: $startSize;
+  font-size: 0
+  & > input {
+    display: none
+    & + label {
+      display: inline-block;
+      width: $startSize;
+      height: $startSize;
+      cursor: pointer
+      &:before {
+        content: ''
+        display: block
+        width: $startSize;
+        height: $startSize;
+        background: linear-gradient(to bottom, #d5d5d5 0%, #717171 100%);
+        clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+      }
+    }
+    &:checked ~ label:before,
+    & + label:hover ~ label:before,
+    & + label:hover:before {
+      background: linear-gradient(to bottom, #fff600 0%, #ff6c00 100%)
+    }
+  }
+
+  &:hover > input + label:before {
+    background: linear-gradient(to bottom, #d5d5d5 0%, #717171 100%);
+  }
+  &:hover > input + label:hover ~ label:before,
+  &:hover > input + label:hover:before {
+    background: linear-gradient(to bottom, #fff600 0%, #ff6c00 100%)
+  }
+
+  // blue theme
+  &.blue {
+    & > input {
+      &:checked ~ label:before,
+      & + label:hover ~ label:before,
+      & + label:hover:before {
+        background: linear-gradient(to bottom, #bdc6d5 0%, #1b14fe 100%)
+      }
+    }
+
+    &:hover > input + label:before {
+      background: linear-gradient(to bottom, #d5d5d5 0%, #717171 100%);
+    }
+
+    &:hover > input + label:hover ~ label:before,
+    &:hover > input + label:hover:before {
+      background: linear-gradient(to bottom, #bdc6d5 0%, #1b14fe 100%)
+    }
+  }
+}
+
 svg {
   polygon {
     fill: inherit;
@@ -90,12 +148,83 @@ svg {
 }
 
 .rating-svg {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+  text-align: left;
   height: $startSize;
-  & > .svg-star {
+  font-size: 0
+  .svg-star {
     display: inline-block;
     width: $startSize;
     height: $startSize;
     cursor: pointer
+  }
+
+  &.simple-js {
+    & > .svg-star {
+      fill: url('/#starGrayGradient')
+      &:hover, &.active {
+        fill: url('/#starYellowGradient')
+        & ~ .svg-star {
+          fill: url('/#starYellowGradient')
+        }
+      }
+    }
+
+    // blue theme
+    &.blue {
+      & > .svg-star {
+        &:hover, &.active {
+          fill: url('/#starBlueGradient')
+          & ~ .svg-star {
+            fill: url('/#starBlueGradient')
+          }
+        }
+      }
+    }
+  }
+
+  &.radio {
+    & > input {
+      display: none
+      & + label {
+        & > .svg-star {
+          fill: url('/#starGrayGradient')
+        }
+      }
+      &:checked ~ label > .svg-star,
+      & + label:hover ~ label > .svg-star,
+      & + label:hover > .svg-star {
+        fill: url('/#starYellowGradient')
+      }
+    }
+
+    &:hover > input + label > .svg-star {
+      fill: url('/#starGrayGradient')
+    }
+    &:hover > input + label:hover ~ label > .svg-star,
+    &:hover > input + label:hover > .svg-star {
+      fill: url('/#starYellowGradient')
+    }
+
+    // blue theme
+    &.blue {
+      & > input {
+        &:checked ~ label > .svg-star,
+        & + label:hover ~ label > .svg-star,
+        & + label:hover > .svg-star {
+          fill: url('/#starBlueGradient')
+        }
+      }
+
+      &:hover > input + label > .svg-star {
+        fill: url('/#starGrayGradient')
+      }
+      &:hover > input + label:hover ~ label > .svg-star,
+      &:hover > input + label:hover > .svg-star {
+        fill: url('/#starBlueGradient')
+      }
+    }
   }
 }
 

@@ -12,20 +12,20 @@
   <div style="height: 0; width: 0; position: absolute; visibility: hidden;">
     <svg xmlns="http://www.w3.org/2000/svg">
       <linearGradient id="starGrayGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-        <stop offset="0%" style="stop-color:#d5d5d5;stop-opacity:1" />
-        <stop offset="100%" style="stop-color:#717171;stop-opacity:1" />
+        <stop offset="0%" stop-color="#d5d5d5"></stop>
+        <stop offset="100%" stop-color="#717171"></stop>
       </linearGradient>
       <linearGradient id="starYellowGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-        <stop offset="0%" style="stop-color:#fff600;stop-opacity:1" />
-        <stop offset="100%" style="stop-color:#ff6c00;stop-opacity:1" />
+        <stop offset="0%" stop-color="#fff600"></stop>
+        <stop offset="100%" stop-color="#ff6c00"></stop>
       </linearGradient>
       <linearGradient id="starBlueGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-        <stop offset="0%" style="stop-color:#bdc6d5;stop-opacity:1" />
-        <stop offset="100%" style="stop-color:#1b14fe;stop-opacity:1" />
+        <stop offset="0%" stop-color="#bdc6d5"></stop>
+        <stop offset="100%" stop-color="#1b14fe"></stop>
       </linearGradient>
       <symbol id="svg_star" viewBox="0 0 92.99 87.99">
         <title>star</title>
-        <polygon points="0 33.11 33.83 33.11 46.49 0 59 33.11 92.99 33.11 66 54.11 77 87.99 46.49 68.28 16.67 87.99 25.83 54.11 0 33.11 0 33.11" />
+        <polygon points="0 33.11 33.83 33.11 46.49 0 59 33.11 92.99 33.11 66 54.11 77 87.99 46.49 68.28 16.67 87.99 25.83 54.11 0 33.11 0 33.11"></polygon>
       </symbol>
     </svg>
   </div>
@@ -33,7 +33,8 @@
   <div class="all_wrp">
     <main class="main_content">
 
-      <p>Bleeding edge - `clip-path` (webkit only):</p>
+      <h3>Bleeding edge - `clip-path` (webkit only):</h3>
+      <p>With JS (.active class on click):</p>
       <div class="rating">
         <span></span><span></span><span></span><span class="active"></span><span></span>
       </div>
@@ -41,8 +42,25 @@
         <span></span><span></span><span></span><span class="active"></span><span></span>
       </div>
 
-      <p>Old good SVG:</p>
-      <div class="rating-svg">
+      <p>Without JS (radio inputs):</p>
+      <div class="rating-radio">
+        <input type="radio" name="rating" id="rating-radio-5" value="5"><label for="rating-radio-5"></label>
+        <input type="radio" name="rating" id="rating-radio-4" value="4"><label for="rating-radio-4"></label>
+        <input type="radio" name="rating" id="rating-radio-3" value="3"><label for="rating-radio-3"></label>
+        <input type="radio" name="rating" id="rating-radio-2" value="2" checked><label for="rating-radio-2"></label>
+        <input type="radio" name="rating" id="rating-radio-1" value="1"><label for="rating-radio-1"></label>
+      </div>
+      <div class="rating-radio blue">
+        <input type="radio" name="rating-blue" id="rating-radio-blue-5" value="5"><label for="rating-radio-blue-5"></label>
+        <input type="radio" name="rating-blue" id="rating-radio-blue-4" value="4"><label for="rating-radio-blue-4"></label>
+        <input type="radio" name="rating-blue" id="rating-radio-blue-3" value="3"><label for="rating-radio-blue-3"></label>
+        <input type="radio" name="rating-blue" id="rating-radio-blue-2" value="2" checked><label for="rating-radio-blue-2"></label>
+        <input type="radio" name="rating-blue" id="rating-radio-blue-1" value="1"><label for="rating-radio-blue-1"></label>
+      </div>
+
+      <h3>Old good SVG:</h3>
+      <p>With JS (.active class on click):</p>
+      <div class="rating-svg simple-js">
         <svg class="svg-star">
           <use xlink:href="#svg_star"></use>
         </svg><svg class="svg-star">
@@ -55,7 +73,7 @@
           <use xlink:href="#svg_star"></use>
         </svg>
       </div>
-      <div class="rating-svg blue">
+      <div class="rating-svg blue simple-js">
         <svg class="svg-star">
           <use xlink:href="#svg_star"></use>
         </svg><svg class="svg-star">
@@ -67,6 +85,21 @@
         </svg><svg class="svg-star">
           <use xlink:href="#svg_star"></use>
         </svg>
+      </div>
+      <p>Without JS (radio inputs):</p>
+      <div class="rating-svg radio">
+        <input type="radio" name="rating-svg" id="rating-radio-svg-5" value="5"><label for="rating-radio-svg-5"><svg class="svg-star"><use xlink:href="#svg_star"></use></svg></label>
+        <input type="radio" name="rating-svg" id="rating-radio-svg-4" value="4"><label for="rating-radio-svg-4"><svg class="svg-star"><use xlink:href="#svg_star"></use></svg></label>
+        <input type="radio" name="rating-svg" id="rating-radio-svg-3" value="3"><label for="rating-radio-svg-3"><svg class="svg-star"><use xlink:href="#svg_star"></use></svg></label>
+        <input type="radio" name="rating-svg" id="rating-radio-svg-2" value="2" checked><label for="rating-radio-svg-2"><svg class="svg-star"><use xlink:href="#svg_star"></use></svg></label>
+        <input type="radio" name="rating-svg" id="rating-radio-svg-1" value="1"><label for="rating-radio-svg-1"><svg class="svg-star"><use xlink:href="#svg_star"></use></svg></label>
+      </div>
+      <div class="rating-svg radio blue">
+        <input type="radio" name="rating-svg-blue" id="rating-radio-svg-blue-5" value="5"><label for="rating-radio-svg-blue-5"><svg class="svg-star"><use xlink:href="#svg_star"></use></svg></label>
+        <input type="radio" name="rating-svg-blue" id="rating-radio-svg-blue-4" value="4"><label for="rating-radio-svg-blue-4"><svg class="svg-star"><use xlink:href="#svg_star"></use></svg></label>
+        <input type="radio" name="rating-svg-blue" id="rating-radio-svg-blue-3" value="3"><label for="rating-radio-svg-blue-3"><svg class="svg-star"><use xlink:href="#svg_star"></use></svg></label>
+        <input type="radio" name="rating-svg-blue" id="rating-radio-svg-blue-2" value="2" checked><label for="rating-radio-svg-blue-2"><svg class="svg-star"><use xlink:href="#svg_star"></use></svg></label>
+        <input type="radio" name="rating-svg-blue" id="rating-radio-svg-blue-1" value="1"><label for="rating-radio-svg-blue-1"><svg class="svg-star"><use xlink:href="#svg_star"></use></svg></label>
       </div>
 
       <div class="progress">
