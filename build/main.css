@@ -302,17 +302,119 @@ img {
 .rating.blue > span.active ~ span:before {
   background: linear-gradient(to bottom, #bdc6d5 0%, #1b14fe 100%);
 }
-svg polygon {
-  fill: inherit;
-}
-.rating-svg {
+.rating-radio {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+  text-align: left;
   height: 16px;
+  font-size: 0;
 }
-.rating-svg > .svg-star {
+.rating-radio > input {
+  display: none;
+}
+.rating-radio > input + label {
   display: inline-block;
   width: 16px;
   height: 16px;
   cursor: pointer;
+}
+.rating-radio > input + label:before {
+  content: '';
+  display: block;
+  width: 16px;
+  height: 16px;
+  background: linear-gradient(to bottom, #d5d5d5 0%, #717171 100%);
+  -webkit-clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+          clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+.rating-radio > input:checked ~ label:before,
+.rating-radio > input + label:hover ~ label:before,
+.rating-radio > input + label:hover:before {
+  background: linear-gradient(to bottom, #fff600 0%, #ff6c00 100%);
+}
+.rating-radio:hover > input + label:before {
+  background: linear-gradient(to bottom, #d5d5d5 0%, #717171 100%);
+}
+.rating-radio:hover > input + label:hover ~ label:before,
+.rating-radio:hover > input + label:hover:before {
+  background: linear-gradient(to bottom, #fff600 0%, #ff6c00 100%);
+}
+.rating-radio.blue > input:checked ~ label:before,
+.rating-radio.blue > input + label:hover ~ label:before,
+.rating-radio.blue > input + label:hover:before {
+  background: linear-gradient(to bottom, #bdc6d5 0%, #1b14fe 100%);
+}
+.rating-radio.blue:hover > input + label:before {
+  background: linear-gradient(to bottom, #d5d5d5 0%, #717171 100%);
+}
+.rating-radio.blue:hover > input + label:hover ~ label:before,
+.rating-radio.blue:hover > input + label:hover:before {
+  background: linear-gradient(to bottom, #bdc6d5 0%, #1b14fe 100%);
+}
+svg polygon {
+  fill: inherit;
+}
+.rating-svg {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+  text-align: left;
+  height: 16px;
+  font-size: 0;
+}
+.rating-svg .svg-star {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+.rating-svg.simple-js > .svg-star {
+  fill: url("/#starGrayGradient");
+}
+.rating-svg.simple-js > .svg-star:hover,
+.rating-svg.simple-js > .svg-star.active {
+  fill: url("/#starYellowGradient");
+}
+.rating-svg.simple-js > .svg-star:hover ~ .svg-star,
+.rating-svg.simple-js > .svg-star.active ~ .svg-star {
+  fill: url("/#starYellowGradient");
+}
+.rating-svg.simple-js.blue > .svg-star:hover,
+.rating-svg.simple-js.blue > .svg-star.active {
+  fill: url("/#starBlueGradient");
+}
+.rating-svg.simple-js.blue > .svg-star:hover ~ .svg-star,
+.rating-svg.simple-js.blue > .svg-star.active ~ .svg-star {
+  fill: url("/#starBlueGradient");
+}
+.rating-svg.radio > input {
+  display: none;
+}
+.rating-svg.radio > input + label > .svg-star {
+  fill: url("/#starGrayGradient");
+}
+.rating-svg.radio > input:checked ~ label > .svg-star,
+.rating-svg.radio > input + label:hover ~ label > .svg-star,
+.rating-svg.radio > input + label:hover > .svg-star {
+  fill: url("/#starYellowGradient");
+}
+.rating-svg.radio:hover > input + label > .svg-star {
+  fill: url("/#starGrayGradient");
+}
+.rating-svg.radio:hover > input + label:hover ~ label > .svg-star,
+.rating-svg.radio:hover > input + label:hover > .svg-star {
+  fill: url("/#starYellowGradient");
+}
+.rating-svg.radio.blue > input:checked ~ label > .svg-star,
+.rating-svg.radio.blue > input + label:hover ~ label > .svg-star,
+.rating-svg.radio.blue > input + label:hover > .svg-star {
+  fill: url("/#starBlueGradient");
+}
+.rating-svg.radio.blue:hover > input + label > .svg-star {
+  fill: url("/#starGrayGradient");
+}
+.rating-svg.radio.blue:hover > input + label:hover ~ label > .svg-star,
+.rating-svg.radio.blue:hover > input + label:hover > .svg-star {
+  fill: url("/#starBlueGradient");
 }
 .progress {
   margin-top: 40px;
